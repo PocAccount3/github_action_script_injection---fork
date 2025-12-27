@@ -1,0 +1,16 @@
+name: main workflow
+
+on: pull_request
+
+
+jobs:
+  featuer:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: featuer type
+        run: |
+          $TITLE = ${{ github.event.pull_request.title }}
+          if [[ $title =~ ^feat ]]; then
+            echo "Feature change"
+          fi
